@@ -53,6 +53,8 @@ def process_folder(folder):
 
 # Get all sub-folders in the input directory
 sub_folders = [folder for folder in os.listdir(input_dir) if os.path.isdir(os.path.join(input_dir, folder))]
+if len(sub_folders) == 0:
+    sub_folders.append(input_dir)
 
 # Create and start a process for each sub-folder
 processes = []
